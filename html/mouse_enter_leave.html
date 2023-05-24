@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример обработчика событий MouseEnter и MouseLeave с addEventListener</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Пример обработчика событий MouseEnter и MouseLeave с addEventListener</h1>
+
+  <div class="box"></div>
+
+  <script>
+    // Получаем ссылку на элемент
+    var box = document.querySelector('.box');
+
+    // Функция для обработки события MouseEnter
+    function handleMouseEnter() {
+      box.style.backgroundColor = 'red';
+    }
+
+    // Функция для обработки события MouseLeave
+    function handleMouseLeave() {
+      box.style.backgroundColor = 'blue';
+    }
+
+    // Добавляем обработчики событий MouseEnter и MouseLeave с помощью addEventListener
+    box.addEventListener('mouseenter', handleMouseEnter);
+    box.addEventListener('mouseleave', handleMouseLeave);
+  </script>
+</body>
+</html>

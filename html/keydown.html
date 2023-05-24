@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример обработчика события KeyDown</title>
+</head>
+<body>
+  <h1>Пример обработчика события KeyDown</h1>
+
+  <p>Нажмите любую клавишу на клавиатуре:</p>
+
+  <p id="keyInfo">Здесь будет отображаться нажатая клавиша.</p>
+
+  <script>
+    // Функция для обработки события KeyDown
+    function handleKeyDown(event) {
+      // Получение символа нажатой клавиши
+      var key = event.key;
+
+      // Отображение символа нажатой клавиши
+      var keyInfoElement = document.getElementById("keyInfo");
+      keyInfoElement.textContent = "Нажата клавиша: " + key;
+    }
+
+    // Добавление обработчика события KeyDown
+    document.addEventListener("keydown", handleKeyDown);
+  </script>
+</body>
+</html>

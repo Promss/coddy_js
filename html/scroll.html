@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример обработчика события Scroll с addEventListener</title>
+  <style>
+    
+
+    .content {
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h2>Содержимое страницы</h2>
+    <p>Прокрутите страницу, чтобы увидеть событие Scroll.</p>
+  </div>
+
+  <script>
+    // Функция для обработки события Scroll
+    function handleScroll() {
+      // Получаем текущую позицию прокрутки
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Получаем ссылки на заголовок и содержимое
+      var content = document.querySelector('.content');
+
+      // Изменяем стили в зависимости от позиции прокрутки
+      if (scrollTop > 100) {
+        content.style.backgroundColor = '#333';
+        content.style.color = '#fff';
+        content.style.paddingTop = '100px';
+      } else {
+        content.style.backgroundColor = '#f1f1f1';
+        content.style.color = '#000';
+        content.style.paddingTop = '0';
+      }
+    }
+
+    // Добавляем обработчик события Scroll с помощью addEventListener
+    window.addEventListener('scroll', handleScroll);
+  </script>
+</body>
+</html>

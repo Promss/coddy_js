@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример смены местами картинок</title>
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img class="image" id="image1" src="images/css.png" alt="Изображение 1">
+    <img class="image" id="image2" src="images/html.png" alt="Изображение 2">
+  </div>
+
+  <script>  
+    // Получение ссылок на элементы по их идентификаторам
+    var image1 = document.getElementById('image1');
+    var image2 = document.getElementById('image2');
+
+    // Функция для смены местами изображений
+    function swapImages() {
+      // Создание временной переменной для хранения значения src первого изображения
+      var tempSrc = image1.src;
+      // Присваивание src первого изображения значению src второго изображения
+      image1.src = image2.src;
+      // Присваивание src второго изображения значению из временной переменной
+      image2.src = tempSrc;
+    }
+
+    // Назначение обработчика события click на оба изображения
+    image1.addEventListener('click', swapImages);
+    image2.addEventListener('click', swapImages);
+  </script>
+</body>
+</html>

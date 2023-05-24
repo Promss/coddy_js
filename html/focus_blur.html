@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример обработчика событий Focus и Blur с addEventListener</title>
+</head>
+<body>
+  <h1>Пример обработчика событий Focus и Blur с addEventListener</h1>
+
+  <input type="text" id="myInput" placeholder="Введите текст...">
+
+  <p id="message"></p>
+
+  <script>
+    // Функция для обработки события Focus
+    function handleFocus() {
+      document.getElementById("message").textContent = "Поле в фокусе";
+    }
+
+    // Функция для обработки события Blur
+    function handleBlur() {
+      document.getElementById("message").textContent = "Поле потеряло фокус";
+    }
+
+    // Получаем ссылку на элемент input
+    var input = document.getElementById("myInput");
+
+    // Добавляем обработчики событий Focus и Blur с помощью addEventListener
+    input.addEventListener("focus", handleFocus);
+    input.addEventListener("blur", handleBlur);
+  </script>
+</body>
+</html>

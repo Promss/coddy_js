@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример обработчика события Change с addEventListener</title>
+</head>
+<body>
+  <h1>Пример обработчика события Change с addEventListener</h1>
+
+  <label for="color">Выберите цвет:</label>
+  <select id="color">
+    <option value="red">Красный</option>
+    <option value="blue">Синий</option>
+    <option value="green">Зеленый</option>
+  </select>
+
+  <script>
+    // Функция для обработки события Change
+    function handleChange(event) {
+      // Получаем выбранное значение
+      var selectedColor = event.target.value;
+
+      // Применяем выбранный цвет к элементу
+      document.body.style.backgroundColor = selectedColor;
+      console.log(selectedColor);
+    }
+
+    // Получаем ссылку на элемент select
+    var colorSelect = document.getElementById("color");
+
+    // Добавляем обработчик события Change с помощью addEventListener
+    colorSelect.addEventListener("change", handleChange);
+  </script>
+</body>
+</html>
